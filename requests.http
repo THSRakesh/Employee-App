@@ -1,0 +1,89 @@
+### Create Projects
+POST http://localhost:8080/odata/v4/ProjectsService/Projects
+Content-Type: application/json
+# Authorization: Basic user2:user2_users
+
+{
+    "currency_code":"INR",
+    "tasks":[
+        {
+            "staff_Id":"550e8400-e29b-41d4-a716-446655440001",
+            "amount":1
+        }
+    ]
+}
+
+### Create Projects in HANA
+POST https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/Projects
+Content-Type: application/json
+# Authorization: Basic user2:user2_users
+# Authorization: Bearer eyJ0eXAiOiJKV1QiLCJqaWQiOiJOcnFZY1F1dHFTZUh1aXQ3RDlJelIwZnFiM2RQeVM4Q0g1T0NEVk42anhZPSIsImFsZyI6IlJTMjU2Iiwiamt1IjoiaHR0cHM6Ly82Mjk1ODE2MXRyaWFsLmF1dGhlbnRpY2F0aW9uLnVzMTAuaGFuYS5vbmRlbWFuZC5jb20vdG9rZW5fa2V5cyIsImtpZCI6ImRlZmF1bHQtand0LWtleS0yNDY0NmIwOWU3In0.eyJzdWIiOiJzYi1FbXBsb3llZS1BcHAtNjI5NTgxNjF0cmlhbC1kZXYhdDU3NjI3MSIsImlzcyI6Imh0dHBzOi8vNjI5NTgxNjF0cmlhbC5hdXRoZW50aWNhdGlvbi51czEwLmhhbmEub25kZW1hbmQuY29tL29hdXRoL3Rva2VuIiwiYXV0aG9yaXRpZXMiOlsidWFhLnJlc291cmNlIl0sImNsaWVudF9pZCI6InNiLUVtcGxveWVlLUFwcC02Mjk1ODE2MXRyaWFsLWRldiF0NTc2MjcxIiwiYXVkIjpbInVhYSIsInNiLUVtcGxveWVlLUFwcC02Mjk1ODE2MXRyaWFsLWRldiF0NTc2MjcxIl0sImV4dF9hdHRyIjp7ImVuaGFuY2VyIjoiWFNVQUEiLCJzdWJhY2NvdW50aWQiOiJiYmI5YWM0OS05NDAyLTQ2NjEtOTYxYi1jMGU5NTUyMDIyZWIiLCJ6ZG4iOiI2Mjk1ODE2MXRyaWFsIn0sInppZCI6ImJiYjlhYzQ5LTk0MDItNDY2MS05NjFiLWMwZTk1NTIwMjJlYiIsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJhenAiOiJzYi1FbXBsb3llZS1BcHAtNjI5NTgxNjF0cmlhbC1kZXYhdDU3NjI3MSIsInNjb3BlIjpbInVhYS5yZXNvdXJjZSJdLCJleHAiOjE3NjkxMDc4OTIsImlhdCI6MTc2OTA2NDY5MiwianRpIjoiZjAxMzE5YmQ0MjIwNDM4MGIxYjNlOTA4YWI2YjMzYTIiLCJyZXZfc2lnIjoiZDM0M2IyMzQiLCJjaWQiOiJzYi1FbXBsb3llZS1BcHAtNjI5NTgxNjF0cmlhbC1kZXYhdDU3NjI3MSJ9.SolCAhmHUY-tqdQrBv6DndRW2vcFJyhn8aQIcmo8SBvjt7rj0exqWrdKOB6NT0mL-Foo69AY4rNPb4IlMgXiQ0OMcJyUAAyavr6pOvMNwGiihFel77zbxNi9ExBJnrcP_YqddoZg0aVDKrRNWX6wdEOJu7t03M2i_kldLh4UAYnJs1XQVBij5kvMzUin2tUQwwZUr8scNNdqUAAJO0l_1cBs9SkXLQsDp4wIoBFAv0NCBCwqiGr5JxxN3CIuYYnlRW1laCRFgxhHen0fhIsUNr1udEtALCHD8P8tj1gVTmEE91Gw9vkh7B2Q1U6v_sICs14pWZkIhzEwHveObx7R5w
+
+{
+    "currency_code":"INR",
+    "tasks":[
+        {
+            "staff_Id":"550e8400-e29b-41d4-a716-446655440003",
+            "amount":1
+        }
+    ]
+}
+
+### Get Projects from HANA
+GET https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/Projects
+
+
+
+### Create Employee in HANA
+POST https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/AdminService/Employees
+Content-Type: application/json
+
+{
+    "EmpCode": "EMP006",
+    "Name": "Employee6",
+    "Email": "emp6@test.com",
+    "Mobile": 9998887777,
+    "Salary": 50000,
+    "currency_code": "INR",
+    "Status": "Active",
+    "currentTasks": 2,
+    "department_ID": 3,
+    "shifts_ID": "2"
+}
+
+### Another Project Task in HANA
+POST https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/ProjectTasks
+Content-Type: application/json
+
+{
+    "parent_ID":"1bb2002c-8915-47f4-a3c9-d01ad01195dc",
+    "staff_Id":"550e8400-e29b-41d4-a716-446655440003",
+    "amount":20
+}
+
+### Read Staff Details
+
+Get http://localhost:8080/odata/v4/StaffService/Staff
+# (ID=550e8400-e29b-41d4-a716-446655440003,EmpCode='EMP003',Email='emp3@test.com')
+Accept: application/json
+
+
+### Read Staff Details
+Get http://localhost:8080/odata/v4/StaffService/Staff(ID=043978b8-a245-4219-a98f-47080aaf99cf,EmpCode='EMP003',Email='emp3@test.com')
+Accept: application/json
+
+### Read Shifts Details
+Get http://localhost:8080/odata/v4/AdminService/Shifts
+Accept: application/json
+
+### Read Project Details
+Get https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/Projects
+Accept: application/json
+
+### Read Project Tasks Details
+Get https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/ProjectTasks
+Accept: application/json
+
+
+
+
