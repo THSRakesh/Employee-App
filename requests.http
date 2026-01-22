@@ -29,6 +29,9 @@ Content-Type: application/json
     ]
 }
 
+### Delete Project in HANA
+DELETE https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/Projects(ID=ccd53815-4c3b-4c9f-8e17-563cf4102f98)
+
 ### Get Projects from HANA
 GET https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/Projects
 
@@ -51,6 +54,35 @@ Content-Type: application/json
     "shifts_ID": "2"
 }
 
+### Update Employee in HANA
+PUT https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/AdminService/Employees(ID=56f964b8-657c-425b-9432-78dcf022ade8,EmpCode='EMP006',Email='emp6@test.com')
+Content-Type: application/json
+
+{
+    "EmpCode": "EMP006",
+    "Name": "Employee6",
+    "Email": "emp6@test.com",
+    "Mobile": 9998887777,
+    "Salary": 50000,
+    "currency_code": "INR",
+    "Status": "Active",
+    "currentTasks": 2,
+    "department_ID": 3,
+    "shifts_ID": "3"
+}
+
+### Update Employee in HANA
+PATCH https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/AdminService/Employees(ID=56f964b8-657c-425b-9432-78dcf022ade8,EmpCode='EMP006',Email='emp6@test.com')
+Content-Type: application/json
+
+{
+    "shifts_ID": "2"
+}
+
+### Delete Employee in HANA
+DELETE https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/AdminService/Employees(ID=56f964b8-657c-425b-9432-78dcf022ade8,EmpCode='EMP006',Email='emp6@test.com')
+
+
 ### Another Project Task in HANA
 POST https://62958161trial-dev-employee-app.cfapps.us10-001.hana.ondemand.com/odata/v4/ProjectsService/ProjectTasks
 Content-Type: application/json
@@ -58,7 +90,7 @@ Content-Type: application/json
 {
     "parent_ID":"1bb2002c-8915-47f4-a3c9-d01ad01195dc",
     "staff_Id":"550e8400-e29b-41d4-a716-446655440003",
-    "amount":20
+    "amount":2
 }
 
 ### Read Staff Details
